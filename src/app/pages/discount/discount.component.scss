@@ -1,0 +1,160 @@
+.discount {
+  width: 100%;
+
+  // .discount__title
+  &__title {
+    margin: 60px auto 0;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 42px;
+      line-height: 1.2em;
+      color: #252525;
+      font-weight: 700;
+      text-align: center;
+      position: relative;
+      padding-top: 10px;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        width: 100%;
+        height: 5px;
+        background: #b5d8f7;
+      }
+    }
+  }
+
+  // .discount__container
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 15px;
+
+    @media (max-width:768px) {
+      flex-direction: column;
+
+    }
+  }
+
+  // .discount__content-card
+
+  &__content-card {
+    margin-bottom: 30px;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width:768px) {
+      width: 100%;
+    }
+  }
+
+
+
+  &__flex-btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__block {
+    width: 100%;
+
+    hr {
+      height: 3px;
+      background-color: #b5d8f7;
+      border-radius: 10px;
+    }
+  }
+
+  &__block-img {
+    width: 100%;
+    padding-top: 60%;
+    margin-bottom: 20px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+
+    img {
+      transition: all .3s ease 0;
+
+      @media (min-width:992px) {
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+
+        }
+      }
+    }
+  }
+
+
+  // .discount__desc
+  &__desc {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+
+    @media (min-width:992px) {
+      &:hover {
+        cursor: pointer;
+        color: #b5d8f7;
+        transition: all 0.3s ease 0s;
+
+      }
+    }
+
+
+  }
+
+  .discount__link:hover .discount__block-img img {
+    @media (min-width:992px) {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+
+  // .discount__btn
+
+  &__btn {
+    font-family: RotondaC;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    transition: .35s;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+    padding: 11px 50px;
+    border-radius: 10px;
+    color: #252525;
+    background-color: #b5d8f7;
+    border: 2px solid #b5d8f7;
+
+    @media (min-width:992px) {
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+}

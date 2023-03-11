@@ -1,0 +1,42 @@
+{
+  "discounts": [
+    {
+      "title": "Рол тижня",
+      "desc": "Рол тижня",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fweekly%20rol.jpg?alt=media&token=4b90f42f-6032-4b62-8c33-a074b2875f02",
+      "id": 1
+    },
+    {
+      "title": "3 + 1 = 5",
+      "desc": "3 + 1 = 5",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2F3%2B1.jpg?alt=media&token=91227f32-3d1f-41c4-a294-9724c94fd480",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "title": "Роли",
+      "path": "roly",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=6a3d321e-86e2-4b01-bcc3-fb554363200d",
+      "id": 1
+    },
+    {
+      "title": "Сети",
+      "path": "sety",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=472182be-ec1c-4b03-8f98-707792ac0ecf",
+      "id": 2
+    },
+    {
+      "title": "Напої",
+      "path": "drinks",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=4bb8db24-7824-4715-9b95-98819fb61211",
+      "id": 3
+    },
+    {
+      "title": "Соуси",
+      "path": "soys",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-soys.svg?alt=media&token=e80a0161-2069-4ca1-aa1f-b9c898cc4a9e",
+      "id": 4
+    }
+  ]
+}
