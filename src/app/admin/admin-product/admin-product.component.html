@@ -1,1 +1,83 @@
-<p>admin-product works!</p>
+<div class="container col-12">
+  <form [formGroup]="productForm" (submit)="addProduct()">
+
+    <div class="mb-3">
+      <select class="form-select" aria-label="Default select example" formControlName="category" name="category">
+        <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.title}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input type="text" class="form-control" formControlName="title" name="title">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Path</label>
+      <input type="text" class="form-control" formControlName="path" name="path">
+    </div>
+
+
+    <div class="mb-3">
+      <label for="floatingTextarea2" class="form-label">Description</label>
+      <textarea class="form-control " id="floatingTextarea2" formControlName="desc" name="desc"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Price</label>
+      <input type="number" class="form-control" formControlName="price" name="price">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Weight</label>
+      <input type="text" class="form-control" formControlName="weight" name="weight">
+    </div>
+
+    <ng-container *ngIf="!isUploaded">
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Download image</label>
+        <input class="form-control" type="file" id="formFile" (change)="upload($event)">
+      </div>
+      <div class="progress mb-3" role="progressbar" aria-label="Default striped example" aria-valuemin="0"
+        aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped " [style.width.%]="uploadPercent"></div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="isUploaded">
+      <div class=" d-flex justify-content-center">
+        <img [src]="valueByControl('imgPath')" width="300px" alt="">
+
+      </div>
+      <button type="button" class="btn btn-danger w-100" (click)="deleteImage()">Delete</button>
+    </ng-container>
+
+
+    <button type="submit" class="btn btn-primary w-100" [ngClass]="{'btn-primary': editStatus}"
+      [ngClass]="{'btn-success': !editStatus}"
+      [disabled]="productForm.invalid">{{editStatus ? "Save" : "Add"  }}</button>
+  </form>
+  <table class="table my-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of adminProducts">
+        <td>{{product.id}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.desc}}</td>
+        <td><img [src]="product.imgPath" width="50px" alt=""></td>
+        <td>
+          <button class="btn btn-warning mx-1" (click)="editProduct(product)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id)" [disabled]="editStatus">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

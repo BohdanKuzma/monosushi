@@ -38,5 +38,39 @@
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-soys.svg?alt=media&token=e80a0161-2069-4ca1-aa1f-b9c898cc4a9e",
       "id": 4
     }
+  ],
+  "products": [
+    {
+      "category": {
+        "title": "Сети",
+        "path": "sety",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=472182be-ec1c-4b03-8f98-707792ac0ecf",
+        "id": 2
+      },
+      "title": "1",
+      "path": "1",
+      "desc": "1",
+      "price": 1,
+      "weight": "1",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2FGaeul_1.jpg?alt=media&token=967aaf93-f929-420a-bd38-3858e6af468f",
+      "count": 1,
+      "id": 1
+    },
+    {
+      "category": {
+        "title": "Роли",
+        "path": "roly",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=6a3d321e-86e2-4b01-bcc3-fb554363200d",
+        "id": 1
+      },
+      "title": "1",
+      "path": "1",
+      "desc": "1",
+      "price": 1,
+      "weight": "1",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fphoto_2023-03-11_21-28-09.jpg?alt=media&token=7eab0063-9d3c-46b5-a9f7-d03e72baa224",
+      "count": null,
+      "id": 2
+    }
   ]
 }

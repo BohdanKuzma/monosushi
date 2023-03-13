@@ -6,10 +6,13 @@
       </div>
 
       <ul class="footer__menu">
-        <li class="footer__menu-item"><a href="#">Акції</a></li>
-        <li class="footer__menu-item"><a href="#">Про нас</a></li>
-        <li class="footer__menu-item"><a href="#">Оферта</a></li>
+        <li class="footer__menu-item"><a [routerLink]="[ '/discount' ]" routerLinkActive="active">Акції</a></li>
+        <li class="footer__menu-item"><a [routerLink]="[ '/about' ]" routerLinkActive="active">Про нас</a></li>
+        <li class="footer__menu-item"><a [routerLink]="[ '/oferta' ]" routerLinkActive="active">Оферта</a></li>
       </ul>
+
+
+
 
       <div class="footer__info">
         <div class="footer__info-delivery">
