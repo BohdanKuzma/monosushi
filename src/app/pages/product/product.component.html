@@ -5,4 +5,51 @@
       Продукти
     </h2>
   </div>
+
+  <div class="product__container">
+
+    <div class="product__item" *ngFor="let product of userProducts">
+      <div class="product__border">
+
+        <div class="product__image-wrap _ibg">
+          <a href="">
+            <img [src]="product.imgPath" alt="">
+          </a>
+        </div>
+
+        <div class="product__title-wrap">
+          <div class="product__title">
+            <a href="">{{product.title}}</a>
+          </div>
+        </div>
+
+        <div class="product__desc">
+          <p>{{product.desc}}</p>
+
+          <div class="product__size">
+            <span class="size">{{product.weight}}</span>
+            <span>г</span>
+          </div>
+
+        </div>
+
+        <div class="product__controls">
+          <div class="product__price-wrap">
+            <div class="product__price">
+              <b class="price">{{product.price}}</b>
+              грн
+            </div>
+          </div>
+
+          <div class="counter__button-group">
+            <button type="button" class="counter__btn">-</button>
+            <input type="text" class="counter__product" value="1">
+            <button type="button" class="counter__btn">+</button>
+          </div>
+          <button class="btn__order">Замовити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>

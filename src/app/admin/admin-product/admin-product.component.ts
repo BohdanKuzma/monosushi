@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category.interface';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { CategoriesServiceService } from 'src/app/shared/services/categories/categories-service.service';
+import { ImageService } from 'src/app/shared/services/image/image.service';
 import { ProductsServiceService } from 'src/app/shared/services/products/products-service.service';
 
 @Component({
@@ -30,7 +31,7 @@ export class AdminProductComponent implements OnInit {
     private productService: ProductsServiceService,
     private categoryService: CategoriesServiceService,
     private fb: FormBuilder,
-    private storage: Storage,
+    private imageService: ImageService,
     private toastr: ToastrService
   ) { }
 
@@ -49,6 +50,7 @@ export class AdminProductComponent implements OnInit {
   loadCategory(): void {
     this.categoryService.getAll().subscribe(data => {
       this.adminCategories = data;
+      this.productForm.patchValue({ category: this.adminCategories[0].id })
     })
   }
 
@@ -70,22 +72,22 @@ export class AdminProductComponent implements OnInit {
   addProduct(): void {
     if (this.editStatus) {
       this.productService.updateOne(this.productForm.value, this.currentID).subscribe(() => {
-        this.toastr.success('Product Add')
+        this.toastr.success('Product Update')
         this.loadProduct()
         this.productForm.reset()
         this.isUploaded = false
 
-      })
 
+      })
     } else {
       this.productService.createOne(this.productForm.value).subscribe(() => {
+        this.toastr.success('Product Add')
         this.loadProduct()
         this.productForm.reset()
         this.isUploaded = false
       })
     }
     this.editStatus = false;
-
   }
 
   editProduct(product: IProductResponse): void {
@@ -109,13 +111,14 @@ export class AdminProductComponent implements OnInit {
     if (confirm('Rly delete?')) {
       this.productService.deleteOne(id).subscribe(() => {
         this.loadProduct()
+        this.toastr.success('Product Delete')
       })
     }
   }
 
   upload(even: any): void {
     const file = even.target.files[0];
-    this.uploadFile('images', file.name, file)
+    this.imageService.uploadFile('images', file.name, file)
       .then(data => {
         this.productForm.patchValue(
           {
@@ -130,44 +133,18 @@ export class AdminProductComponent implements OnInit {
       })
   }
 
-
-  async uploadFile(folder: string, name: string, file: File | null): Promise<string> {
-    const path = `${folder}/${name}`;
-    let url = '';
-    if (file) {
-      try {
-        const storageRef = ref(this.storage, path);
-        const task = uploadBytesResumable(storageRef, file)
-        percentage(task).subscribe(data => {
-          this.uploadPercent = data.progress
-        });
-        await task;
-        url = await getDownloadURL(storageRef);
-
-      } catch (e: any) {
-        console.error(e);
-      }
-    } else {
-      console.log('wrong format');
-    }
-    return Promise.resolve(url)
-
-  }
-
   deleteImage(): void {
-    const task = ref(this.storage, this.valueByControl('imgPath'))
-    deleteObject(task).then(() => {
-      console.log('File delete');
-      this.isUploaded = false;
-      this.uploadPercent = 0;
-      this.productForm.patchValue(
-        {
-          imgPath: null
-        }
-      )
-    })
-  }
+    this.imageService.deleteUploadFile(this.valueByControl('imgPath'))
+      .then(() => {
+        this.isUploaded = false;
+        this.uploadPercent = 0;
+        this.productForm.patchValue({ imgPath: null })
+      })
+      .catch(err => {
+        console.log(err);
 
+      })
+  }
 
   valueByControl(control: string): string {
     return this.productForm.get(control)?.value;

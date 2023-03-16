@@ -1,1 +1,108 @@
-<p>home works!</p>
+<section class="home">
+  <div class="home__container">
+    <div class="home__wrapper">
+
+    </div>
+
+    <div class="home__info">
+      <div class="home__info-container">
+
+        <div class="home__info-item">
+          <div class="home__info-item-wrapper">
+            <div class="home__info-item-img">
+              <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mn-delivery-img.svg" alt="">
+            </div>
+            <a class="home__btn" href="">Зона доставки</a>
+          </div>
+        </div>
+
+        <div class="home__info-item mod">
+          <div class="home__info-item-wrapper">
+            <div class="home__info-item-img">
+              <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mono-supermen.svg" alt="">
+            </div>
+            <div class="home__text">
+              Середній час доставки в<br>
+              зеленій зоні <b>00:43:00</b>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__info-item">
+          <div class="home__info-item-wrapper">
+            <div class="home__info-item-img">
+              <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mono-bonus.svg" alt="">
+            </div>
+            <div class="home__text">
+              Наш графік роботи <br>
+              Працюємо з <b>11:00</b>
+              до <b>22:30</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home__wrapper">
+      <div class="categories-menu">
+        <ul class="categories-list">
+          <li class="categories-list-item active-category"><a class="categories-list-link" href="">Всі</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Філадельфія</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Каліфорнія</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Запечені</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Фірмові</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Макі</a></li>
+          <li class="categories-list-item"><a class="categories-list-link" href="">Преміум</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product__container">
+      <div class="product__item" *ngFor="let product of userProducts">
+        <div class="product__border">
+
+          <div class="product__image-wrap _ibg">
+            <a href="">
+              <img [src]="product.imgPath" alt="">
+            </a>
+          </div>
+
+          <div class="product__title-wrap">
+            <div class="product__title">
+              <a href="">{{product.title}}</a>
+            </div>
+          </div>
+
+          <div class="product__desc">
+            <p>{{product.desc}}</p>
+
+            <div class="product__size">
+              <span class="size">{{product.weight}}</span>
+              <span>г</span>
+            </div>
+
+          </div>
+
+          <div class="product__controls">
+            <div class="product__price-wrap">
+              <div class="product__price">
+                <b class="price">{{product.price}}</b>
+                грн
+              </div>
+            </div>
+
+            <div class="counter__button-group">
+              <button type="button" class="counter__btn">-</button>
+              <input type="text" class="counter__product" value="1">
+              <button type="button" class="counter__btn">+</button>
+            </div>
+            <button class="btn__order">Замовити</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

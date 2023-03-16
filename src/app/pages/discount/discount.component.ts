@@ -19,8 +19,8 @@ export class DiscountComponent implements OnInit {
     this.getData()
   }
 
-  getData():void{
-    this.discountService.getAll().subscribe(data =>{
+  getData(): void {
+    this.discountService.getAll().subscribe(data => {
       this.userDiscount = data
     })
   }

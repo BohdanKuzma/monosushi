@@ -12,6 +12,7 @@ export class ProductsServiceService {
   private api = {
     products: `${this.url}/products`
   }
+  static getAll: any;
   constructor(
     private http: HttpClient
   ) { }
