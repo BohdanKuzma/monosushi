@@ -4,6 +4,8 @@
   display: flex;
   box-shadow: 0px 0px 2px lightgrey;
 
+
+
   // .header__logo
   &__logo {
     background-color: #b5d8f7;
@@ -11,6 +13,10 @@
     justify-content: center;
     align-items: center;
     padding: 0 22px;
+
+    @media (max-width: 768px) {
+      padding: 0 10px;
+    }
   }
 
   // .header__img
@@ -18,6 +24,22 @@
     img {
       max-width: 173px;
       height: 65px;
+
+      @media (max-width:768px) {
+        display: none;
+      }
+
+    }
+
+    .img-mobile {
+      display: none;
+      width: 25px;
+      height: 50px;
+
+      @media (max-width:768px) {
+        display: block;
+
+      }
     }
   }
 
@@ -76,9 +98,6 @@
       }
 
     }
-
-
-
   }
 
   // .header__nav-wrapper
@@ -87,6 +106,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width:1200px) {
+      display: none;
+    }
   }
 
   &__wrapper-item {
@@ -128,6 +151,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @media (max-width:1200px) {
+      flex-direction: row-reverse;
+    }
   }
 
   // .header__burger-menu
@@ -259,6 +286,10 @@
       border: 2px solid #b5d8f7;
     }
 
+    @media (max-width: 1200px) {
+      background-color: #fff;
+    }
+
   }
 
   // .header__call-btn
@@ -274,11 +305,17 @@
     font-weight: 700;
     color: #252525;
     vertical-align: middle;
+
+
   }
 
   // .header__info
   &__info {
     text-align: center;
+
+    @media (max-width:1200px) {
+      display: none;
+    }
   }
 
   // .header__phone
@@ -297,6 +334,10 @@
         color: #b5d8f7;
       }
     }
+
+    @media (max-width:1200px) {
+      display: none;
+    }
   }
 
   // .header__work-time
@@ -305,6 +346,10 @@
     font-size: 14px;
     line-height: 1.2em;
     color: #212529;
+
+    @media (max-width:1200px) {
+      display: none;
+    }
   }
 
   // .header__admin
@@ -385,6 +430,9 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width:768px) {
+      max-width: 100px;
+    }
   }
 
   // .header__basket-wrapper
@@ -394,6 +442,13 @@
     align-items: center;
     gap: 20px;
     position: relative;
+
+    img {
+      @media (max-width:768px) {
+        width: 25px;
+      }
+    }
+
   }
 
   // .header__basket-counter
@@ -413,6 +468,14 @@
     height: 26px;
     border-radius: 100%;
     text-align: center;
+
+    @media (max-width:768px) {
+      top: -9px;
+      left: 13px;
+      min-width: 22px;
+      max-width: 36px;
+      height: 24px;
+    }
   }
 
   // .header__basket-price
@@ -458,4 +521,12 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 65px;
+  }
+
+
 }

@@ -34,10 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +52,6 @@ import { ToastrModule } from 'ngx-toastr';
     AdminProductComponent,
     AdminDiscountComponent,
     AdminOrdersComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -64,6 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),

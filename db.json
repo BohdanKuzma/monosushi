@@ -87,22 +87,6 @@
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Frol-3.jpg?alt=media&token=57953a45-955a-4513-bd60-70ff652886e3",
       "count": 1,
       "id": 3
-    },
-    {
-      "category": {
-        "title": "Роли",
-        "path": "roly",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=6a3d321e-86e2-4b01-bcc3-fb554363200d",
-        "id": 1
-      },
-      "title": "Найс рол ",
-      "path": "klasniy-roll",
-      "desc": "Найс рол ",
-      "price": 1000,
-      "weight": "460",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fssstwitter.com_1678810414439.gif?alt=media&token=202e7680-b8a3-4d15-9e96-e55aac26c90c",
-      "count": 1,
-      "id": 4
     }
   ]
 }

@@ -4,12 +4,23 @@
   width: 100%;
   padding: 15px 25px;
 
+
+  &__wrapper {
+    @media (max-width:900px) {
+      display: none;
+    }
+  }
+
   // .footer__top
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+
+    @media (max-width:900px) {
+      flex-direction: column;
+    }
   }
 
   // .footer__logo
@@ -31,6 +42,10 @@
     transition: .35s;
     padding: 0;
     margin: 0;
+
+    @media (max-width:900px) {
+      margin-top: 15px;
+    }
   }
 
   // .footer__menu-item
@@ -48,6 +63,12 @@
           transition: .35s;
         }
       }
+
+      @media (max-width:900px) {
+        font-size: 14px;
+
+      }
+
     }
   }
 
@@ -57,6 +78,17 @@
     width: 100%;
     justify-content: space-between;
     text-align: center;
+
+    @media (max-width:900px) {
+      margin-top: 15px;
+      flex-direction: column;
+
+    }
+
+
+    a {
+      font-size: 14px;
+    }
   }
 
   // .footer__info-delivery
@@ -167,6 +199,11 @@
         background-color: #fff;
       }
     }
+
+    @media (max-width:900px) {
+      width: 35px;
+      height: 35px;
+    }
   }
 
   // .footer__developer
@@ -178,5 +215,86 @@
       font-size: 14px;
       margin-bottom: 5px;
     }
+  }
+
+  &__mobile {
+    padding-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: block;
+
+    @media (min-width:900px) {
+      display: none;
+    }
+
+
+
+
+    .logo__footer {
+      max-width: 110px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+
+    .footer__social {
+      margin-top: 15px;
+    }
+
+
+    .footer__info-delivery {
+      li {
+        font-weight: 400;
+        margin-top: 5px;
+      }
+    }
+
+    .footer__info-order {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+
+      a {
+        @media (max-width:900px) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .footer__info-timework {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    .footer__pay-cards {
+      margin-top: 15px;
+
+      @media (max-width:900px) {
+        justify-content: center;
+      }
+
+      .footer__pay-card-item {
+        width: 56px;
+        height: 33px;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .footer__bottom {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+
   }
 }
