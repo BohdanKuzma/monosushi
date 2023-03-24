@@ -1,0 +1,107 @@
+.discount-info {
+
+  // .discount-info__container
+
+  &__container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+
+
+  }
+
+  // .discount-info__menu-list
+
+  &__menu-list {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+
+    li,
+    a {
+
+      text-transform: capitalize;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 13px;
+      color: #5a5a5a;
+    }
+
+    li:not(:first-child) {
+      margin-left: 30px;
+      position: relative;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: -16px;
+      width: 4px;
+      height: 4px;
+      background-color: #5a5a5a;
+      border-radius: 50%;
+    }
+  }
+
+  // .discount-info__content
+
+  &__content {
+    width: 60%;
+    margin: 40px auto;
+
+    @media (max-width:1000px) {
+      width: 95%;
+      margin: 40px auto;
+    }
+  }
+
+  // .discount-info__banner
+
+  &__banner {
+    width: 100%;
+    min-height: 180px;
+    background-color: #b5d8f7;
+    background-image: url('https://monosushi.com.ua/wp-content/themes/monosushi/img/bg-monosushi-logo.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+
+    .discount-info__title {
+      color: #252525;
+      font-weight: 700;
+      font-size: 42px;
+      line-height: 1.2em;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+
+      @media (max-width: 500px) {
+        font-size: 32px;
+      }
+    }
+
+
+    .discount-info__title::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #252525;
+      border-radius: 10px;
+    }
+  }
+
+
+
+  // .discount-info__content-list
+
+  &__content-list {
+    margin-top: 60px;
+  }
+}

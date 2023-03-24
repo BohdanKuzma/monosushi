@@ -102,7 +102,7 @@ export class AdminProductComponent implements OnInit {
         price: product.price,
         weight: product.weight,
         imgPath: product.imgPath,
-        // count: [1]
+        count: [1]
       }
     )
   }

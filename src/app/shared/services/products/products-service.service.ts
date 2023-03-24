@@ -25,6 +25,10 @@ export class ProductsServiceService {
     return this.http.get<IProductResponse[]>(`${this.api.products}?category.path=${category}`)
   }
 
+  getOne(id: number): Observable<IProductResponse> {
+    return this.http.get<IProductResponse>(`${this.api.products}/${id}`);
+  }
+
   createOne(product: IProductRequest): Observable<IProductResponse> {
     return this.http.post<IProductResponse>(this.api.products, product)
   }
@@ -35,5 +39,7 @@ export class ProductsServiceService {
   updateOne(product: IProductRequest, id: number): Observable<IProductResponse> {
     return this.http.patch<IProductResponse>(`${this.api.products}/${id}`, product)
   }
+
+
 
 }

@@ -53,7 +53,7 @@
       "price": 250,
       "weight": "240",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Frol-1.jpg?alt=media&token=d8ef6536-6b51-4d73-ab1c-0acf9131a527",
-      "count": null,
+      "count": 1,
       "id": 1
     },
     {
@@ -87,6 +87,54 @@
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Frol-3.jpg?alt=media&token=57953a45-955a-4513-bd60-70ff652886e3",
       "count": 1,
       "id": 3
+    },
+    {
+      "category": {
+        "title": "Сети",
+        "path": "sety",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=472182be-ec1c-4b03-8f98-707792ac0ecf",
+        "id": 2
+      },
+      "title": "Сет Філадельфія",
+      "path": "set-filadelfiya",
+      "desc": "Сет Філадельфія: з лососем / з креветкою / з крабом / з вугрем",
+      "price": 920,
+      "weight": "1000",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fset-1.jpg?alt=media&token=46173ce5-05fc-44fb-80b4-f064c0fa6ac5",
+      "count": 1,
+      "id": 4
+    },
+    {
+      "category": {
+        "title": "Напої",
+        "path": "drinks",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=4bb8db24-7824-4715-9b95-98819fb61211",
+        "id": 3
+      },
+      "title": " Pepsi",
+      "path": "pepsi",
+      "desc": "Pepsi",
+      "price": 35,
+      "weight": "0,33",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fpepsi.jpg?alt=media&token=847d9109-53f7-4db7-8b2f-296fbadd509f",
+      "count": 1,
+      "id": 5
+    },
+    {
+      "category": {
+        "title": "Соуси",
+        "path": "soys",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-soys.svg?alt=media&token=e80a0161-2069-4ca1-aa1f-b9c898cc4a9e",
+        "id": 4
+      },
+      "title": "Васабі",
+      "path": "vasabi",
+      "desc": "Васабі",
+      "price": 12,
+      "weight": "25",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fvasabi.png?alt=media&token=666b1876-3e94-49d1-a3de-5c01f4f5906a",
+      "count": 1,
+      "id": 6
     }
   ]
 }

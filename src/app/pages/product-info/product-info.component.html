@@ -2,53 +2,43 @@
   <div class="product-info__container">
     <ul class="product-info__menu-list">
       <li>
-        <a href="">Головна</a>
+        <a [routerLink]="[ ''  ]">Головна</a>
       </li>
       <li>
-        <a href="">Роли</a>
+        <a [routerLink]="[ '/product/'+currentProduct.category.path]">{{currentProduct.category.title}}</a>
       </li>
       <li>
-        <a href="">Рол1</a>
+        <a>{{currentProduct.title}}</a>
       </li>
     </ul>
 
-
-    <div class="product-info__content">
+    <div class=" product-info__content">
       <div class="product-info__item">
 
         <div class="product-info__item-img">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/monosushi-39325.appspot.com/o/images%2Fphoto_2023-03-06_16-25-56.jpg?alt=media&token=50d03197-1cc1-4f39-8398-e2219f6a1425"
-            alt="">
+          <img [src]="currentProduct.imgPath" alt="">
         </div>
 
-
         <div class="product-info__item-info">
-          <h3 class="product-info__item-title">Рол1</h3>
+          <h3 class="product-info__item-title">{{currentProduct.title}}</h3>
           <p class="product-info__desc">
-            <span>Склад:</span>Рол1
+            <span>Склад:</span>{{currentProduct.desc}}
           </p>
           <p class="product-info__desc">
-            <span>Вага:</span>Рол1
+            <span>Вага:</span>{{currentProduct.weight}}
           </p>
 
           <div class="product-info__navigation">
-            <p class="product-info__price">100 грн</p>
+            <p class="product-info__price">{{currentProduct.price * currentProduct.count}}грн</p>
             <div class="counter__button-group">
-              <button class="counter__btn">-</button>
-              <input type="text" class="counter__product" readonly value="1">
-              <button class="counter__btn">+</button>
+              <button (click)="productCount(currentProduct, false)" class="counter__btn">-</button>
+              <input type="text" class="counter__product" readonly [value]="currentProduct.count">
+              <button (click)="productCount(currentProduct, true)" class="counter__btn">+</button>
             </div>
-            <button class="order__btn">Замовити</button>
+            <button class="order__btn" (click)="addToBasket(currentProduct)">Замовити</button>
           </div>
         </div>
-
-
       </div>
-
-
-
-
     </div>
   </div>
 

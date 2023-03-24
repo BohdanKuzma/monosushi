@@ -6,18 +6,20 @@
     </h2>
   </div>
 
+ 
+
   <div class="discount__container">
     <div class="discount__content-card " *ngFor="let discount of userDiscount">
       <div class="discount__block">
         <div class="discount__link">
           <div class="discount__block-img _ibg">
-            <img [src]="discount.imgPath" alt="">
+            <img [routerLink]="[ '/discount/',discount.id]" [src]="discount.imgPath" alt="">
           </div>
-          <h3 class="discount__desc">{{discount.title}}</h3>
+          <h3 [routerLink]="[ '/discount/',discount.id]" class="discount__desc">{{discount.title}}</h3>
         </div>
         <hr>
         <div class="discount__flex-btn">
-          <a class="discount__btn">Дізнатися Більше</a>
+          <a [routerLink]="[ '/discount/',discount.id]" class="discount__btn">Дізнатися Більше</a>
         </div>
       </div>
     </div>

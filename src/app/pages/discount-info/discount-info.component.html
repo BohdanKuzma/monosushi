@@ -1,1 +1,31 @@
-<p>discount-info works!</p>
+<section class="discount-info">
+
+  <div class="discount-info__container">
+
+    <ul class="discount-info__menu-list">
+      <li>
+        <a [routerLink]="[ '' ]">Головна</a>
+      </li>
+      <li>
+        <a [routerLink]="[ '/discount']">Акції</a>
+      </li>
+      <li>
+        <a>{{currentDiscount.title}}</a>
+      </li>
+    </ul>
+
+    <div class="discount-info__content">
+
+      <div class="discount-info__banner">
+        <h2 class="discount-info__title">{{currentDiscount.title}}</h2>
+      </div>
+
+      <div class="discount-info__content-list">
+        <ul>
+          {{currentDiscount.desc}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -16,24 +16,35 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminDiscountComponent } from './admin/admin-discount/admin-discount.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { ProductInfoResolver } from './shared/services/products/product-info.resolver';
+import { DiscountInfoResolver } from './shared/services/discounts/discount-info.resolver';
 
 const routes: Routes = [
   {
     path: "home", component: HomeComponent
   },
+
+  {
+    path: "", pathMatch: "full", redirectTo: 'home'
+  },
   {
     path: "discount", component: DiscountComponent
   },
+  {
+    path: "discount/:id", component: DiscountInfoComponent,
+    resolve: {
+      discountInfo: DiscountInfoResolver
+    }
+  },
+  {
+    path: "product/:category", component: ProductComponent
+  },
+  {
+    path: "product/:category/:id", component: ProductInfoComponent,
+    resolve: {
+      productInfo: ProductInfoResolver
+    }
 
-  {
-    path: "discount/:id", component: DiscountInfoComponent
-  },
-  {
-    path: "product", component: ProductComponent
-  },
-  {
-    path: "product-info", component: ProductInfoComponent
-    // product/:category/:id
   },
   {
     path: "delivery", component: DeliveryComponent
@@ -53,7 +64,7 @@ const routes: Routes = [
       { path: "product", component: AdminProductComponent },
       { path: "discount", component: AdminDiscountComponent },
       { path: "orders", component: AdminOrdersComponent },
-      { path: "", pathMatch:'full', redirectTo: 'category' },
+      { path: "", pathMatch: 'full', redirectTo: 'category' },
     ]
   },
 

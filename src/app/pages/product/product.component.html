@@ -12,14 +12,14 @@
       <div class="product__border">
 
         <div class="product__image-wrap _ibg">
-          <a href="">
+          <a [routerLink]="[ '/product/'+product.category.path, product.id ]">
             <img [src]="product.imgPath" alt="">
           </a>
         </div>
 
         <div class="product__title-wrap">
           <div class="product__title">
-            <a href="">{{product.title}}</a>
+            <a [routerLink]="[ '/product/'+product.category.path, product.id ]">{{product.title}}</a>
           </div>
         </div>
 
@@ -36,17 +36,17 @@
         <div class="product__controls">
           <div class="product__price-wrap">
             <div class="product__price">
-              <b class="price">{{product.price}}</b>
+              <b class="price">{{product.price * product.count}}</b>
               грн
             </div>
           </div>
 
           <div class="counter__button-group">
-            <button type="button" class="counter__btn">-</button>
-            <input type="text" class="counter__product" value="1">
-            <button type="button" class="counter__btn">+</button>
+            <button (click)="productCount(product, false)" type="button" class="counter__btn">-</button>
+            <input type="text" class="counter__product" [value]="product.count">
+            <button (click)="productCount(product, true)" type="button" class="counter__btn">+</button>
           </div>
-          <button class="btn__order">Замовити</button>
+          <button class="btn__order" (click)="addToBasket(product)">Замовити</button>
         </div>
       </div>
     </div>

@@ -34,25 +34,21 @@
     </div>
 
     <div class="home__center-wrapper">
-      <!-- <div id="carouselExampleInterval" class="carousel slide carousel3" data-bs-ride="carousel">
+      <div id="carouselExampleInterval" class="carousel slide carousel3" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active carousel-item3" data-bs-interval="2000">
-            <img
-              src="https://kpopping.com/documents/8a/1/800/221129-NEWJEANS-Twitter-Update-Hanni-documents-1.jpeg?v=bfc32"
-              class="d-block w-100" alt="...">
+          <div class="carousel-item active carousel-item3" data-bs-interval="4000">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2022/12/monokombo.jpg" class="d-block w-66" alt="...">
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="https://kpopping.com/documents/c7/4/800/230228-ITZY-Instagram-Update-Yuna-documents-6.jpeg?v=09dc2"
-              class="d-block w-100" alt="...">
+          <div class="carousel-item carousel-item3" data-bs-interval="4000">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2022/12/rol-tyzhnya.jpg" class="d-block w-66"
+              alt="...">
           </div>
-          <div class="carousel-item">
-            <img
-              src="https://kpopping.com/documents/c7/4/800/230228-ITZY-Instagram-Update-Yuna-documents-6.jpeg?v=09dc2"
-              class="d-block w-100" alt="...">
+          <div class="carousel-item carousel-item3">
+            <img src="https://monosushi.com.ua/wp-content/uploads/2022/12/5-tyj-v-podarunok-.jpg" class="d-block w-66"
+              alt="...">
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
 
     <div class="home__info">
@@ -138,22 +134,21 @@
           <div class="product__controls">
             <div class="product__price-wrap">
               <div class="product__price">
-                <b class="price">{{product.price}}</b>
+                <b class="price">{{product.price * product.count}}</b>
                 грн
               </div>
             </div>
 
             <div class="counter__button-group">
-              <button type="button" class="counter__btn">-</button>
-              <input type="text" class="counter__product" value="1">
-              <button type="button" class="counter__btn">+</button>
+              <button type="button" (click)="productCount(product, false)" class="counter__btn">-</button>
+              <input type="text" class="counter__product" [value]="product.count">
+              <button type="button" (click)="productCount(product, true)" class="counter__btn">+</button>
             </div>
-            <button class="btn__order">Замовити</button>
+            <button class="btn__order" (click)="addToBasket(product)">Замовити</button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
 </section>

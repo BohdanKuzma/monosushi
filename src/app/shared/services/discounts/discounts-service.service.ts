@@ -20,6 +20,10 @@ export class DiscountsServiceService {
     return this.http.get<IDiscountResponse[]>(this.api.discounts)
   }
 
+  getOne(id: number): Observable<IDiscountResponse> {
+    return this.http.get<IDiscountResponse>(`${this.api.discounts}/${id}`);
+  }
+
   createOne(discount: IDiscountRequest): Observable<IDiscountResponse> {
     return this.http.post<IDiscountResponse>(this.api.discounts, discount)
   }
@@ -31,5 +35,7 @@ export class DiscountsServiceService {
   updateOne(discount: IDiscountRequest, id: number): Observable<IDiscountResponse> {
     return this.http.patch<IDiscountResponse>(`${this.api.discounts}/${id}`, discount)
   }
+
+
 
 }

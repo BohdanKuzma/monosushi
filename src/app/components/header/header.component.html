@@ -17,31 +17,28 @@
 
 
     <div class="header__menu-link-wrapper">
-      <a class="header__item" [routerLink]="[ '/product' ]" routerLinkActive="active">
-
+      <a class="header__item" [routerLink]="[ '/product/roly' ]" routerLinkActive="active">
         <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-rolls.svg" alt="">
         <span>Роли</span>
-
       </a>
     </div>
 
     <div class="header__menu-link-wrapper">
-      <a class="header__item" [routerLink]="[ '/product' ]" routerLinkActive="active">
-
+      <a class="header__item" [routerLink]="[ '/product/sety' ]" routerLinkActive="active">
         <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-sets.svg" alt="">
         <span>Сети</span>
       </a>
     </div>
 
     <div class="header__menu-link-wrapper">
-      <a class="header__item" [routerLink]="[ '/product' ]" routerLinkActive="active">
+      <a class="header__item" [routerLink]="[ '/product/drinks' ]" routerLinkActive="active">
         <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/nav-img-drinks.svg" alt="">
         <span>Напої</span>
       </a>
     </div>
 
     <div class="header__menu-link-wrapper">
-      <a class="header__item" [routerLink]="[ '/product' ]" routerLinkActive="active">
+      <a class="header__item" [routerLink]="[ '/product/soys' ]" routerLinkActive="active">
         <img src="https://monosushi.com.ua/wp-content/uploads/2021/09/icon.svg" alt="">
         <span>Соуси</span>
       </a>
@@ -49,12 +46,12 @@
   </div>
 
   <div class="header__wrapper-for-nav">
-    <div class="header__burger-menu" (click)="openMenu()" >
+    <div class="header__burger-menu" (click)="openMenu()">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
         alt="">
 
-      <div class="nav-menu "[ngClass]="{'__active': navMenuStatus}">
+      <div class="nav-menu " [ngClass]="{'__active': navMenuStatus}">
         <a class="nav-menu-item" href="" [routerLink]="[ '/delivery' ]" routerLinkActive="active">Доставка та
           оплата</a>
         <a class="nav-menu-item" href="" [routerLink]="[ '/about' ]" routerLinkActive="active">Про нас</a>
@@ -88,13 +85,12 @@
       <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg" alt="">
       <span class="header__basket-counter">0</span>
       <div class="header__basket-price">
-        <b>0</b>
+        <b>{{totalPrice}}</b>
         <span>грн</span>
       </div>
     </div>
   </div>
 
 
-
-
+  
 </header>
