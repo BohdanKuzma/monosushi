@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { initializeApp } from "firebase/app";
 import { environment } from 'src/environments/environmet';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -67,6 +69,8 @@ import { OfertaComponent } from './pages/oferta/oferta.component';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

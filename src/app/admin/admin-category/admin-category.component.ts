@@ -65,10 +65,8 @@ export class AdminCategoryComponent implements OnInit {
         this.categoryForm.reset()
         this.editStatus = false;
         this.isUploaded = false;
-
       })
     }
-
   }
 
   deleteCategory(id: number): void {
@@ -108,7 +106,6 @@ export class AdminCategoryComponent implements OnInit {
       })
   }
 
-
   deleteImage(): void {
     this.imageService.deleteUploadFile(this.valueByControl('imgPath'))
       .then(() => {
@@ -122,10 +119,7 @@ export class AdminCategoryComponent implements OnInit {
       })
   }
 
-
   valueByControl(control: string): string {
     return this.categoryForm.get(control)?.value;
   }
-
-
 }

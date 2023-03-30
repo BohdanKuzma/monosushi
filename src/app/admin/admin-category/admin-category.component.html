@@ -10,11 +10,6 @@
       <input type="text" class="form-control" formControlName="path" name="path">
     </div>
 
-    <!-- <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">ImgPath</label>
-        <input type="text" class="form-control" formControlName="imgPath" name="imgPath">
-      </div> -->
-
     <ng-container *ngIf="!isUploaded">
       <div class="mb-3">
         <label for="formFile" class="form-label">Download image</label>
@@ -34,11 +29,12 @@
       <button type="button" class="btn btn-danger w-100 " (click)="deleteImage()">Delete</button>
     </ng-container>
 
-
     <button type="submit" class="btn btn-primary w-100" [ngClass]="{'btn-primary': editStatus}"
       [ngClass]="{'btn-success': !editStatus}"
       [disabled]="categoryForm.invalid">{{editStatus ? "Save" : "Add"  }}</button>
+      
   </form>
+
   <table class="table my-3">
     <thead>
       <tr>

@@ -76,8 +76,6 @@ export class AdminProductComponent implements OnInit {
         this.loadProduct()
         this.productForm.reset()
         this.isUploaded = false
-
-
       })
     } else {
       this.productService.createOne(this.productForm.value).subscribe(() => {
