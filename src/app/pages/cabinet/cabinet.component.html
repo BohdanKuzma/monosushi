@@ -1,0 +1,152 @@
+<section class="cabinet">
+  <div class="cabinet__container">
+    <div class="cabinet__title">
+      <h2>Кабінет</h2>
+    </div>
+    <div class="cabinet__container">
+
+      <!-- Вертикальне меню -->
+      <div class="d-flex cabinet__wrapper">
+        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+          <div class="flex-btn">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Особисті дані</button>
+
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+              type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Історія замовлень</button>
+          </div>
+
+
+          <div class="flex-btn">
+            <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled"
+              type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">Зміна паролю</button>
+
+            <button class="nav-link exit-btn" id="v-pills-messages-tab" data-bs-toggle="pill"
+              data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+              aria-selected="false">Вихід з кабінету</button>
+          </div>
+
+        </div>
+
+
+        <!-- Спосіб оплати -->
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"
+            tabindex="0">
+            <div class="cabinet__form ">
+              <div class="form-subtitle">
+                <h3>Спосіб оплати</h3>
+              </div>
+
+              <form class="row">
+
+                <div class=" w-100 d-flex justify-content-between container-row">
+
+                  <div class="mb-3 w-85 col-5">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input type="text" class="form-control w-100" placeholder="*Ваше ім'я">
+                  </div>
+
+                  <div class="mb-3 w-85 col-5">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input type="text" class="form-control w-100" placeholder="*Ваше прізвище">
+                  </div>
+
+                </div>
+
+                <div class="mb-3 w-100">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="text" class="form-control w-100" placeholder="*Ваш телефон">
+                </div>
+
+                <div class="mb-3 w-100">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="text" class="form-control w-100" placeholder="*Ваш email">
+                </div>
+
+              </form>
+
+              <div class="form-subtitle">
+                <h3 class="">Адреси</h3>
+              </div>
+
+              <div class="btn-wrapper">
+                <button type="button" class="btn-cabinet btn-address-add">Додати адресу</button>
+                <button type="button" class="btn-cabinet btn-address-save">Зберегти зміну</button>
+              </div>
+
+            </div>
+          </div>
+
+
+
+          <!-- Історія замовлень -->
+          <div class="tab-pane fade w-100" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"
+            tabindex="0">
+            <div class="cabinet__form  ">
+              <div class="row">
+                <table class="table w-100">
+                  <thead class="w-100">
+                    <tr>
+                      <th scope="col">№ Замовлення</th>
+                      <th scope="col">Дата та Час</th>
+                      <th scope="col">Адреса</th>
+                      <th scope="col">Сума</th>
+                      <th scope="col">Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">№ 1</th>
+                      <td>08.2022 18:47:25</td>
+                      <td>Самовивіз </td>
+                      <td>510 грн</td>
+                      <td>Виконано</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Зміна паролю -->
+          <div class="tab-pane fade w-100" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab"
+            tabindex="0">
+            <div class="cabinet__form ">
+              <div class="form-subtitle">
+                <h3 class="mb-3">Змінити пароль</h3>
+              </div>
+              <form class="row">
+                <div class="mb-3 w-100 d-flex justify-content-between container-row">
+
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="text" class="form-control w-100" placeholder="*Ваш поточний пароль">
+                </div>
+
+
+                <div class="mb-3 w-100 col-12">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="text" class="form-control w-100" placeholder="*Новий пароль">
+                </div>
+
+                <div class="mb-3 w-100 col-12">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input type="text" class="form-control w-100" placeholder="*Повторіть пароль">
+                </div>
+
+              </form>
+
+              <div class="btn-wrapper">
+                <button type="button" class="btn-cabinet btn-address-add">Скасувати</button>
+                <button type="button" class="btn-cabinet btn-address-save">Зберегти зміну</button>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"
+            tabindex="0">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

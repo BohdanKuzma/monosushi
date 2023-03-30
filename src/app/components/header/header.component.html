@@ -59,7 +59,6 @@
       </div>
     </div>
 
-
     <div class="header__call-back">
       <button class="header__call-btn">
         <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/phone.svg" alt="">
@@ -72,13 +71,18 @@
       <div class="header__work-time"> Працюємо з <b>11:00</b> до <b>22:30 </b></div>
     </div>
 
-    <div class="header__admin" [routerLink]="[ '/admin' ]" routerLinkActive="active">
+    <div class="header__admin" [routerLink]="[ '/'+loginUrl ]" routerLinkActive="active" *ngIf="isLogin">
       <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
     </div>
 
-
-
+    <div class="header__user" [routerLink]="[ '/user' ]" routerLinkActive="active" *ngIf="!isLogin">
+      <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
+    </div>
   </div>
+
+  <!-- <div class="header__admin" [routerLink]="[ '/admin' ]" routerLinkActive="active" >
+    <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
+  </div> -->
 
   <div class="header__basket">
     <div class="header__basket-wrapper">
@@ -91,6 +95,4 @@
     </div>
   </div>
 
-
-  
 </header>

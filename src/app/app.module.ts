@@ -32,6 +32,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AuthorzationComponent } from './pages/authorzation/authorzation.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { OfertaComponent } from './pages/oferta/oferta.component';
 
 
 @NgModule({
@@ -52,6 +55,9 @@ import { ToastrModule } from 'ngx-toastr';
     AdminProductComponent,
     AdminDiscountComponent,
     AdminOrdersComponent,
+    AuthorzationComponent,
+    CabinetComponent,
+    OfertaComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,11 +65,8 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
-
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
-
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

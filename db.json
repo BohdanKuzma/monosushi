@@ -1,6 +1,5 @@
 {
-  "discounts": [
-    {
+  "discounts": [{
       "title": "Рол тижня",
       "desc": "Рол тижня",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fweekly%20rol.jpg?alt=media&token=4b90f42f-6032-4b62-8c33-a074b2875f02",
@@ -13,8 +12,7 @@
       "id": 2
     }
   ],
-  "categories": [
-    {
+  "categories": [{
       "title": "Роли",
       "path": "roly",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=6a3d321e-86e2-4b01-bcc3-fb554363200d",
@@ -39,8 +37,7 @@
       "id": 4
     }
   ],
-  "products": [
-    {
+  "products": [{
       "category": {
         "title": "Роли",
         "path": "roly",
@@ -135,6 +132,23 @@
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fvasabi.png?alt=media&token=666b1876-3e94-49d1-a3de-5c01f4f5906a",
       "count": 1,
       "id": 6
+    }
+  ],
+
+  "auth": [{
+      "id": 1,
+      "email": "admin@gmail.com",
+      "password": "qwerty123",
+      "fullName": "Petro Petriv",
+      "role": "ADMIN"
+
+    },
+    {
+      "id": 2,
+      "email": "user@gmail.com",
+      "password": "qwerty123",
+      "fullName": "Pavliv Pavliv",
+      "role": "USER"
     }
   ]
 }
