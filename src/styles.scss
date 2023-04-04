@@ -2,6 +2,9 @@
 @import 'ngx-toastr/toastr';
 @import url('/src/app/shared/styles/_base.scss');
 
+@import 'app/shared/styles/theme-material';
+
+
 @font-face {
   font-family: RotondaC;
   src: url(assets/fonts/RotondaC.ttf) format('truetype');
@@ -11,8 +14,6 @@
   font-family: RotondaC-bold;
   src: url(assets/fonts/RotondaC-Bold.ttf) format('truetype');
 }
-
-body {}
 
 html,
 body {
@@ -36,11 +37,17 @@ body {
   position: relative;
 
   img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
   }
 }
+
+html,
+body {
+  height: 100%;
+}
+

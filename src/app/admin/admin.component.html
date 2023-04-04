@@ -1,28 +1,31 @@
-<div class="container-fluid w-100 my-3 mx-3">
-  <div class="d-flex align-items-start">
-    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-      <button class="nav-link " [routerLink]="[ 'category' ]" routerLinkActive="active" id="v-pills-home-tab"
-        data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-        aria-selected="true">Category</button>
-
-      <button class="nav-link " [routerLink]="[ 'product' ]" routerLinkActive="active" id="v-pills-home-tab"
-        data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-        aria-selected="true">Product</button>
-
-      <button class="nav-link " [routerLink]="[ 'discount' ]" routerLinkActive="active" id="v-pills-home-tab"
-        data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-        aria-selected="true">Discount</button>
-
-      <button class="nav-link" [routerLink]="[ 'orders' ]" routerLinkActive="active" id="v-pills-home-tab"
-        data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-        aria-selected="true">Orders</button>
-
-      <button class="nav-link nav-link-logout" (click)="logout()">Log Out</button>
-
-    </div>
-    <div class="tab-content w-100" id="v-pills-tabContent">
-      <router-outlet></router-outlet>
+<section class="admin-component">
+  <div class="container-fluid w-100 my-3 mx-3">
+    <div class="d-flex align-items-start">
+      <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  
+        <button class="nav-link " [routerLink]="[ 'category' ]" routerLinkActive="active" id="v-pills-home-tab"
+          data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+          aria-selected="true">Category</button>
+  
+        <button class="nav-link " [routerLink]="[ 'product' ]" routerLinkActive="active" id="v-pills-home-tab"
+          data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+          aria-selected="true">Product</button>
+  
+        <button class="nav-link " [routerLink]="[ 'discount' ]" routerLinkActive="active" id="v-pills-home-tab"
+          data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+          aria-selected="true">Discount</button>
+  
+        <button class="nav-link" [routerLink]="[ 'orders' ]" routerLinkActive="active" id="v-pills-home-tab"
+          data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+          aria-selected="true">Orders</button>
+  
+        <button class="nav-link nav-link-logout" (click)="logout()">Log Out</button>
+  
+      </div>
+      <div class="tab-content w-100" id="v-pills-tabContent">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
+  
+</section>

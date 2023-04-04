@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit {
 
   public eventSubscription!: Subscription
 
+  public currentCategoryName!: string;
+
   constructor(
     private productService: ProductsServiceService,
     private activatedRoute: ActivatedRoute,
@@ -37,7 +39,21 @@ export class ProductComponent implements OnInit {
     this.productService.getAllbyCategory(categoryName).subscribe(data => {
       this.userProducts = data
     })
+    if (categoryName == 'roly') {
+      this.currentCategoryName = 'Роли'
+    }
+    else if (categoryName == 'sety') {
+      this.currentCategoryName = 'Сети'
+    }
+    else if (categoryName == 'drinks') {
+      this.currentCategoryName = 'Напої'
+    }
+    else if (categoryName == 'soys') {
+      this.currentCategoryName = 'Соуси'
+    }
   }
+
+
 
   productCount(product: IProductResponse, value: boolean): void {
     if (value) {
@@ -57,7 +73,6 @@ export class ProductComponent implements OnInit {
       } else {
         basket.push(product)
       }
-
     } else {
       basket.push(product)
     }
@@ -65,5 +80,5 @@ export class ProductComponent implements OnInit {
     product.count = 1;
     this.orderService.changeBasket.next(true)
   }
-
 }
+

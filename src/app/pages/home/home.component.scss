@@ -8,10 +8,18 @@
 
   // .home__wrapper
   &__wrapper {
+    margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
   }
+
+  &__wrapper1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
 
   &__right-wrapper,
   &__left-wrapper {
@@ -35,6 +43,8 @@
       padding-right: 10px;
     }
   }
+
+  
 
   // .home__info
   &__info {
@@ -515,6 +525,3 @@
 .carousel-inner {
   border-radius: 10px;
 }
-
-
-

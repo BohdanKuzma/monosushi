@@ -4,7 +4,6 @@
       <img src="https://monosushi.com.ua/wp-content/uploads/2021/06/logo.svg" alt="">
       <img class="img-mobile" src="https://monosushi.com.ua/wp-content/uploads/2021/08/logo-mobile.svg" alt="">
     </a>
-
   </div>
 
   <div class="header__nav-wrapper">
@@ -14,7 +13,6 @@
         <span>Акції</span>
       </a>
     </div>
-
 
     <div class="header__menu-link-wrapper">
       <a class="header__item" [routerLink]="[ '/product/roly' ]" routerLinkActive="active">
@@ -75,24 +73,21 @@
       <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
     </div>
 
-    <div class="header__user" [routerLink]="[ '/user' ]" routerLinkActive="active" *ngIf="!isLogin">
+    <div class="header__register" *ngIf="!isLogin" (click)="openLoginDialog()">
       <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
     </div>
   </div>
 
-  <!-- <div class="header__admin" [routerLink]="[ '/admin' ]" routerLinkActive="active" >
-    <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="">
-  </div> -->
+ 
 
-  <div class="header__basket">
+  <div class="header__basket" (click)="openBasket()">
     <div class="header__basket-wrapper">
       <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg" alt="">
-      <span class="header__basket-counter">0</span>
+      <span class="header__basket-counter">{{totalCount}}</span>
       <div class="header__basket-price">
         <b>{{totalPrice}}</b>
         <span>грн</span>
       </div>
     </div>
   </div>
-
 </header>

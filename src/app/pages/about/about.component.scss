@@ -4,10 +4,16 @@
   padding: 60px 50px;
   max-width: 1150px;
   margin: 0 auto;
+  margin-top: 80px;
+
 
   @media screen and (max-width: 768px) {
     padding: 60px 0;
   }
+
+  // &__container {
+  //   margin-top: 135px;
+  // }
 
 
   &__title {

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ROLE } from 'src/app/shared/constants/role.constant';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { AccountService } from 'src/app/shared/services/account/account.service';
 import { OrdersServiceService } from 'src/app/shared/services/orders/orders-service.service';
+import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
+import { BasketComponent } from '../basket/basket.component';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +17,8 @@ export class HeaderComponent implements OnInit {
 
   public totalPrice = 0;
 
+  public totalCount = 0;
+
   private basket: Array<IProductResponse> = []
 
   public isLogin = false;
@@ -23,20 +28,20 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private orderService: OrdersServiceService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    public dialog: MatDialog,
+    public basketCart: MatDialog
   ) { }
-  
+
   ngOnInit(): void {
     this.loadBasket();
     this.updateBasket()
     this.checkUserLogin();
     this.checkUpdatesUserLogin();
-
   }
 
   openMenu(): void {
     this.navMenuStatus = !this.navMenuStatus;
-
   }
 
   loadBasket(): void {
@@ -44,11 +49,17 @@ export class HeaderComponent implements OnInit {
       this.basket = JSON.parse(localStorage.getItem('basket') as string);
     }
     this.getTotalPrice()
+    this.getTotalCount()
   }
 
   getTotalPrice(): void {
     this.totalPrice = this.basket.reduce((totalPrice: number, prod: IProductResponse) =>
       totalPrice + prod.count * prod.price, 0)
+  }
+
+  getTotalCount(): void {
+    this.totalCount = this.basket.reduce((totalCount: number, prod: IProductResponse) =>
+    totalCount + prod.count, 0)
   }
 
   updateBasket(): void {
@@ -68,7 +79,7 @@ export class HeaderComponent implements OnInit {
       this.loginUrl = 'cabinet';
       this.loginPage = 'Cabinet';
     } else {
-      this.isLogin = true;
+      this.isLogin = false;
       this.loginUrl = 'admin';
       this.loginPage = 'Admin';
     }
@@ -80,5 +91,22 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  openLoginDialog(): void {
+    this.dialog.open(AuthDialogComponent, {
+      backdropClass: 'dialog-back',
+      panelClass: 'auth-dialog',
+    })
+  }
+
+  openBasket(): void {
+    this.basketCart.open(BasketComponent, {
+      backdropClass: 'basket-back',
+      panelClass: 'basket',
+    })
+  }
+
 
 }
+
+
+

@@ -1,0 +1,220 @@
+.cart {
+  width: 664px;
+  background-color: #fff;
+  position: fixed;
+  top: 110px;
+  right: 0;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  z-index: 99;
+
+  @media (max-width:1500px) {
+    top: 80px;
+  }
+}
+
+.cart-top {
+  padding: 20px;
+}
+
+.cart-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-empty-message {
+  width: 225px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-empty-img {
+  margin-bottom: 15px;
+}
+
+.title {
+  margin: 60px auto 0;
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-btn {
+  border: 2px solid #b5d8f7;
+  background: #b5d8f7;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 16px 22px;
+  border-radius: 10px;
+  color: #252525;
+  text-decoration: none;
+  transition: all .4s;
+  outline: none;
+  border: 1px solid #b5d8f7;
+
+  margin-top: 5px;
+
+  @media (min-width:992px) {
+    &:hover {
+      background: transparent;
+      border: 1px solid #b5d8f7;
+    }
+
+  }
+}
+
+.cart-close:disabled {
+  background-color: #fc427b;
+}
+
+
+.cart-bottom {
+  padding: 20px;
+  background-color: #b5d8f7;
+  background-image: url('https://monosushi.com.ua/wp-content/themes/monosushi/img/bg-monosushi-logo.svg');
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.cart-price {
+  color: #252525;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.cart-close {
+  border: 2px solid #b5d8f7;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 16px 22px;
+  border-radius: 10px;
+  color: #252525;
+  text-decoration: none;
+
+}
+
+.cart-close:disabled {
+  background-color: #fc427b;
+}
+
+.cart-product {
+  padding: 20px;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-product-img {
+  width: 122px;
+  height: 92px;
+  padding: 10px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.cart-item-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.card-product-title {
+  color: #252525;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1em;
+  width: 200px;
+}
+
+.card-item-wrapper-nav {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+
+  // .counter__button-group
+
+  &__button-group {
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    color: #252525;
+    font-size: 16px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    border: none;
+    background: transparent;
+    width: 32px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 14px;
+    color: #5a5a5a;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.4s;
+    text-align: center;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+
+  
+
+    @media (min-width:992px) {
+      :hover {
+        background-color: #b5d8f7;
+      }
+    }
+  }
+}
+
+// .counter__btn
+
+.cart-product-price {
+  width: 75px;
+  margin-left: 5px;
+}
+
+.deleteproduct {
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+.button1{
+  @media (min-width:992px) {
+    &:hover{
+      background-color: #b5d8f7;
+      transition: all .4s;
+    }
+  }
+}

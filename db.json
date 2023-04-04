@@ -1,18 +1,20 @@
 {
-  "discounts": [{
+  "discounts": [
+    {
       "title": "Рол тижня",
-      "desc": "Рол тижня",
+      "desc": "Щотижня діє знижка 50% на один з ролів у нашому меню. “Рол тижня” ви можете знайти на головній сторінці нашого сайту. Знижка діє при мінімальній сумі замовлення 300 грн. Ця акція не поєднується з іншими акціями.",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fweekly%20rol.jpg?alt=media&token=4b90f42f-6032-4b62-8c33-a074b2875f02",
       "id": 1
     },
     {
       "title": "3 + 1 = 5",
-      "desc": "3 + 1 = 5",
+      "desc": "Замовляйте 5 ролів, а платіть за 4. Замовляйте 10 ролів, а платіть за 8 і так далі. Безкоштовним вважається рол з найменшою вартістю. Ця акція не поєднується з іншими акціями.",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2F3%2B1.jpg?alt=media&token=91227f32-3d1f-41c4-a294-9724c94fd480",
       "id": 2
     }
   ],
-  "categories": [{
+  "categories": [
+    {
       "title": "Роли",
       "path": "roly",
       "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-adb00.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=6a3d321e-86e2-4b01-bcc3-fb554363200d",
@@ -37,7 +39,8 @@
       "id": 4
     }
   ],
-  "products": [{
+  "products": [
+    {
       "category": {
         "title": "Роли",
         "path": "roly",
@@ -134,14 +137,13 @@
       "id": 6
     }
   ],
-
-  "auth": [{
+  "auth": [
+    {
       "id": 1,
       "email": "admin@gmail.com",
       "password": "qwerty123",
       "fullName": "Petro Petriv",
       "role": "ADMIN"
-
     },
     {
       "id": 2,

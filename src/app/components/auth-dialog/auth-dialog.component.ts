@@ -1,20 +1,25 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
+import { Component, OnInit } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { doc, docData, Firestore, setDoc } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { ROLE } from 'src/app/shared/constants/role.constant';
 import { AccountService } from 'src/app/shared/services/account/account.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-authorzation',
-  templateUrl: './authorzation.component.html',
-  styleUrls: ['./authorzation.component.scss']
+  selector: 'app-auth-dialog',
+  templateUrl: './auth-dialog.component.html',
+  styleUrls: ['./auth-dialog.component.scss']
 })
-export class AuthorzationComponent implements OnInit, OnDestroy {
+export class AuthDialogComponent implements OnInit {
   public authForm!: FormGroup;
+  public regForm!: FormGroup;
+
+  public isRegister = false;
+  public isLogin = false;
+
   public loginSubscription!: Subscription;
 
   constructor(
@@ -27,17 +32,30 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.initAuthForm();
+    this.initAuthForm()
+    this.initRegForm()
+
   }
 
-  ngOnDestroy(): void {
-    this.loginSubscription.unsubscribe();
+  changeRegisterUser(): void {
+    this.isRegister = !this.isRegister
+
   }
 
   initAuthForm(): void {
     this.authForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]]
+    })
+  }
+
+  initRegForm(): void {
+    this.regForm = this.fb.group({
+      firstname: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
+      phone: [null, [Validators.required]],
     })
   }
 
@@ -48,6 +66,7 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     }).catch(e => {
       this.toastr.error(e)
     })
+
   }
 
   async login(email: string, password: string): Promise<void> {
@@ -65,7 +84,6 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     }, (e) => {
       console.log('error', e);
     })
-    
   }
 
   registerUser(): void {
@@ -73,10 +91,14 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     this.emailSignUp(email, password).then(() => {
       this.toastr.success('User successfully created')
       this.authForm.reset();
+
+      this.isLogin = !this.isLogin
     }).catch(e => {
       this.toastr.error(e)
     })
   }
+
+
 
   async emailSignUp(email: string, password: string): Promise<void> {
     const credential = await createUserWithEmailAndPassword(this.auth, email, password);
@@ -92,4 +114,19 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     };
     setDoc(doc(this.afs, 'users', credential.user.uid), user);
   }
+
+  // async emailSignUp(email: string, password: string): Promise<void> {
+  //   const credential = await createUserWithEmailAndPassword(this.auth, email, password);
+  //   console.log('emailSignUp', credential);
+  //   const user = {
+  //     email: credential.user.email,
+  //     firstName: '',
+  //     lastName: '',
+  //     phoneNumber: '',
+  //     address: '',
+  //     orders: [],
+  //     role: 'USER'
+  //   };
+  //   setDoc(doc(this.afs, 'users', credential.user.uid), user);
+  // }
 }

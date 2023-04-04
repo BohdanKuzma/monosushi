@@ -1,0 +1,83 @@
+<div class="modal-content" *ngIf="!isRegister">
+  <div class="modal-window-header">
+    <h1 class="modal-title">Вхід в кабінет</h1>
+  </div>
+  <form [formGroup]="authForm">
+    <div class="mb-2 w-100">
+      <label for="exampleInputEmail1" class="form-label"></label>
+      <input type="text" class="form-control w-100" formControlName="email" name="email" placeholder="*Ваш email">
+    </div>
+
+    <div class="mb-3 w-100">
+      <label for="exampleInputEmail1" class="form-label"></label>
+      <input type="password" class="form-control w-100" formControlName="password" name="password"
+        placeholder="*Пароль">
+    </div>
+    <button mat-dialog-close type="button" class="btn-cabinet btn-address-add" [disabled]="authForm.invalid"
+      (click)="loginUser() ">Увійти
+      в Кабінет</button>
+  </form>
+
+  <div class="btn-modal-wrapper">
+    <div class="modal-register-btn">Забули пароль?</div>
+    <div class="modal-forgot-pass-btn" (click)="changeRegisterUser()">Зареєструватися</div>
+  </div>
+</div>
+
+<div class="modal-content" *ngIf="isRegister">
+  <div class="modal-window-header">
+    <h1 class="modal-title">Зареєструватися</h1>
+  </div>
+
+  <form [formGroup]="authForm">
+    <div class="row">
+      <div class="mb-2 col-6">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="form-control w-100" placeholder="Ваше ім'я ">
+      </div>
+
+      <div class="mb-2 col-6">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="form-control w-100" placeholder="Ваше прізвище">
+      </div>
+    </div>
+
+    <div class="mb-2 w-100">
+      <label for="exampleInputEmail1" class="form-label"></label>
+      <input type="text" class="form-control w-100" placeholder="Ваш телефон">
+    </div>
+
+    <div class="mb-2 w-100">
+      <label for="exampleInputEmail1" class="form-label"></label>
+      <input type="email" class="form-control w-100" formControlName="email" name="email" placeholder="Ваш email">
+    </div>
+
+    <div class="row">
+      <div class="mb-2 col-6">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="password" class="form-control w-100" formControlName="password" name="password"
+          placeholder="Пароль">
+      </div>
+
+      <div class="mb-3 col-6">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="password" class="form-control w-100" formControlName="password" name="password"
+          placeholder="Повторіть пароль">
+      </div>
+    </div>
+
+    <div class="rules mb-2">
+      <input type="checkbox">
+      <span class="rules-text">Я погоджуюсь <a href="/oferta">Правилами користування</a></span>
+    </div>
+
+    <button mat-dialog-close type="button" class="btn-cabinet btn-address-add"
+      (click)="registerUser()">Зареєструватися</button>
+  </form>
+
+  <div class="btn-modal-wrapper">
+    <p>Уже зареєстровані?</p>
+    <div class="modal-forgot-pass-btn" (click)="changeRegisterUser()">Увійти в аккаунт</div>
+  </div>
+
+</div>

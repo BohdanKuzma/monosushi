@@ -59,7 +59,7 @@
             <div class="home__info-item-img">
               <img src="https://monosushi.com.ua/wp-content/uploads/2020/10/mn-delivery-img.svg" alt="">
             </div>
-            <a class="home__btn" href="">Зона доставки</a>
+            <a class="home__btn" [routerLink]="[ '/delivery' ]">Зона доставки</a>
           </div>
         </div>
 
@@ -91,7 +91,7 @@
       </div>
     </div>
 
-    <div class="home__wrapper">
+    <div class="home__wrapper1">
       <div class="categories-menu">
         <ul class="categories-list">
           <li class="categories-list-item active-category"><a class="categories-list-link" href="">Всі</a></li>
@@ -110,14 +110,14 @@
         <div class="product__border">
 
           <div class="product__image-wrap _ibg">
-            <a href="">
+            <a [routerLink]="[ '/product/'+product.category.path, product.id ]">
               <img [src]="product.imgPath" alt="">
             </a>
           </div>
 
           <div class="product__title-wrap">
             <div class="product__title">
-              <a href="">{{product.title}}</a>
+              <a [routerLink]="[ '/product/'+product.category.path, product.id ]">{{product.title}}</a>
             </div>
           </div>
 
