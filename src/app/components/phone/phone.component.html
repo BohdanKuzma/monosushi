@@ -1,0 +1,22 @@
+<div class="modal-content">
+  <div class="modal-window-header">
+    <h1 class="modal-title">МИ ЗАТЕЛЕФОНУЄМО</h1>
+    <p class="modal-subtitle">Залиште номер телефону і наші менеджери зв’яжуться з вами</p>
+  </div>
+  <form [formGroup]="phoneForm">
+    <div class="modal-window-body">
+      <div class="mb-2 w-100">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="form-control w-100 modal-window-input" formControlName="firstName" name="firstName"
+          placeholder="*Ваше Ім'я">
+      </div>
+
+      <div class="mb-3 w-100">
+        <label for="exampleInputEmail1" class="form-label"></label>
+        <input type="text" class="form-control w-100 modal-window-input" formControlName="phone" name="phone"
+          placeholder="*Ваший номер телефону">
+      </div>
+    </div>
+  </form>
+  <button type="button" class="btn-send">Надіслати</button>
+</div>

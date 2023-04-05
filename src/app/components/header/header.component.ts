@@ -6,6 +6,7 @@ import { AccountService } from 'src/app/shared/services/account/account.service'
 import { OrdersServiceService } from 'src/app/shared/services/orders/orders-service.service';
 import { AuthDialogComponent } from '../auth-dialog/auth-dialog.component';
 import { BasketComponent } from '../basket/basket.component';
+import { PhoneComponent } from '../phone/phone.component';
 
 @Component({
   selector: 'app-header',
@@ -30,7 +31,8 @@ export class HeaderComponent implements OnInit {
     private orderService: OrdersServiceService,
     private accountService: AccountService,
     public dialog: MatDialog,
-    public basketCart: MatDialog
+    public basketCart: MatDialog,
+    public phone: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -105,7 +107,12 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-
+  openPhone(): void {
+    this.phone.open(PhoneComponent, {
+      backdropClass: 'phone-back',
+      panelClass: 'phone',
+    })
+  }
 }
 
 

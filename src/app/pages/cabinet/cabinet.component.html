@@ -37,30 +37,35 @@
                 <h3>Спосіб оплати</h3>
               </div>
 
-              <form class="row">
+              <form class="row" [formGroup]="cabinetUserForm">
 
                 <div class=" w-100 d-flex justify-content-between container-row">
 
                   <div class="mb-3 w-85 col-5">
                     <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text" class="form-control w-100" placeholder="*Ваше ім'я">
+                    <input type="text" class="form-control w-100" placeholder="*Ваше ім'я" formControlName="firstName"
+                      name="firstName">
                   </div>
 
                   <div class="mb-3 w-85 col-5">
                     <label for="exampleInputEmail1" class="form-label"></label>
-                    <input type="text" class="form-control w-100" placeholder="*Ваше прізвище">
+                    <input type="text" class="form-control w-100" placeholder="*Ваше прізвище"
+                      formControlName="lastName" name="lastName">
                   </div>
 
                 </div>
 
                 <div class="mb-3 w-100">
                   <label for="exampleInputEmail1" class="form-label"></label>
-                  <input type="text" class="form-control w-100" placeholder="*Ваш телефон">
+                  <input type="text" class="form-control w-100" placeholder="*Ваш телефон" formControlName="phone"
+                    name="phone">
+
                 </div>
 
                 <div class="mb-3 w-100">
                   <label for="exampleInputEmail1" class="form-label"></label>
-                  <input type="text" class="form-control w-100" placeholder="*Ваш email">
+                  <input type="text" class="form-control w-100" placeholder="*Ваш email" formControlName="email"
+                    name="email">
                 </div>
 
               </form>

@@ -44,7 +44,7 @@
     }
   }
 
-  
+
 
   // .home__info
   &__info {
@@ -270,6 +270,16 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border: 0px solid #b5d8f7;
+      border-radius: 8px;
+
+      @media (min-width:992px) {
+        &:hover {
+          border: 2px solid #b5d8f7;
+        
+         
+        }
+      }
     }
 
     // .product__image-wrap

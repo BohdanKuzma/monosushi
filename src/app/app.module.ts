@@ -41,6 +41,7 @@ import { OfertaComponent } from './pages/oferta/oferta.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
 import { BasketComponent } from './components/basket/basket.component';
+import { PhoneComponent } from './components/phone/phone.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { BasketComponent } from './components/basket/basket.component';
     OfertaComponent,
     AuthDialogComponent,
     BasketComponent,
+    PhoneComponent,
   ],
   imports: [
     BrowserModule,

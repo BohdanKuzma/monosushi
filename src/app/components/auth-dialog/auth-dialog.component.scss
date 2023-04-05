@@ -4,6 +4,10 @@
   font-size: 18px;
   line-height: 1.5em;
   text-align: center;
+
+  @media (max-width:1200px) {
+    padding: 25px 30px 25px;
+  }
 }
 
 .modal-window-header {
@@ -67,4 +71,12 @@
 
 .rules a {
   color: #252525;
+}
+
+.password-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  color: red;
 }

@@ -1,0 +1,90 @@
+.modal-content {
+  position: relative;
+  padding: 50px 60px 45px;
+  font-size: 18px;
+  line-height: 1.5em;
+  text-align: center;
+
+  @media (max-width:992px) {
+    padding: 25px 30px 20px;
+  }
+
+  @media (max-width:768px) {
+    padding: 25px 30px 20px;
+  }
+}
+
+.modal-window-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.modal-title {
+  margin-bottom: 5px;
+  color: #252525;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (max-width:992px) {
+    font-size: 28px;
+  }
+}
+
+.modal-subtitle {
+  font-size: 16px;
+  line-height: 1.4em;
+  max-width: 390px;
+  color: #5a5a5a;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width:992px) {
+    font-size: 14px;
+  }
+}
+
+
+
+.modal-window-input {
+  width: 100%;
+  font-size: 16px;
+  height: 56px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #252525;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  transition: .35s;
+  text-overflow: ellipsis;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-send {
+  text-align: center;
+  transition: .35s;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 16px 22px;
+  border-radius: 10px;
+  color: #252525;
+  border: 2px solid #b5d8f7;
+  background: #b5d8f7;
+
+
+}
+
+.btn-send:hover {
+  @media (min-width:992px) {
+    background: transparent;
+  }
+}

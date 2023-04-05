@@ -563,8 +563,6 @@
     }
   }
 
-
-
   // .header__basket
 
   &__basket {
@@ -576,10 +574,14 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: 1px solid #b5d8f7;
+
+
 
     @media (max-width:768px) {
       max-width: 100px;
     }
+
   }
 
   // .header__basket-wrapper
@@ -593,7 +595,6 @@
     @media (max-width:768px) {
       gap: 15px;
     }
-
 
     img {
       @media (max-width:768px) {
@@ -679,5 +680,4 @@
   .header {
     height: 65px;
   }
-
 }
