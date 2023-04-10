@@ -3,8 +3,6 @@ import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { OrdersServiceService } from 'src/app/shared/services/orders/orders-service.service';
 import { ProductsServiceService } from 'src/app/shared/services/products/products-service.service';
 
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +10,7 @@ import { ProductsServiceService } from 'src/app/shared/services/products/product
 })
 
 export class HomeComponent implements OnInit {
-  
+
   public userProducts: Array<IProductResponse> = [];
 
   public currentProduct!: IProductResponse;
@@ -27,8 +25,11 @@ export class HomeComponent implements OnInit {
   }
 
   getData(): void {
-    this.productService.getAll().subscribe(data => {
-      this.userProducts = data
+    // this.productService.getAll().subscribe(data => {
+    //   this.userProducts = data 
+    // })
+    this.productService.getAllFirebase().subscribe(data => {
+      this.userProducts = data.filter(item => item['category']['path'] == 'roly' || item['category']['path'] == 'sets' ) as IProductResponse[]
     })
   }
   productCount(product: IProductResponse, value: boolean): void {
@@ -49,7 +50,6 @@ export class HomeComponent implements OnInit {
       } else {
         basket.push(product)
       }
-
     } else {
       basket.push(product)
     }

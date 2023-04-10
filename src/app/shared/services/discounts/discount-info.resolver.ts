@@ -17,7 +17,7 @@ export class DiscountInfoResolver implements Resolve<IDiscountResponse> {
 
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IDiscountResponse> {
-    return this.discountService.getOne(Number(route.paramMap.get('id')));
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+    return this.discountService.getOneFirebase(route.paramMap.get('id') as string);
   }
 }

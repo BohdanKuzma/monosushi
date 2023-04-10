@@ -20,8 +20,12 @@ export class DiscountComponent implements OnInit {
   }
 
   getData(): void {
-    this.discountService.getAll().subscribe(data => {
-      this.userDiscount = data
+    // this.discountService.getAll().subscribe(data => {
+    //   this.userDiscount = data
+    // })
+
+    this.discountService.getAllFirebase().subscribe(data => {
+      this.userDiscount = data as IDiscountResponse[];
     })
   }
 }
