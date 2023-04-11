@@ -1,6 +1,6 @@
 export const environment = {
 
-    firebase :{
+    firebase: {
         apiKey: "AIzaSyA_I3y2VCm6lEv7CL_VHkX5eux2aOKv7Yc",
         authDomain: "monosushi-adb00.firebaseapp.com",
         projectId: "monosushi-adb00",
@@ -10,5 +10,10 @@ export const environment = {
     },
 
     production: true,
-    BACKEND_URL: "http://localhost:3000"
+    BACKEND_URL: "http://localhost:3000",
+
+    TELEGRAM_KEY: {
+        url: 'https://api.telegram.org/bot5619601197:AAEqCWcHYvhWSKhKoJYASn1q2pw23cIj7aE/sendMessage',
+        chatID: '-1001933848331'
+    }
 };

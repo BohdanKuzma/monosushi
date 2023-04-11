@@ -11,5 +11,9 @@ export const environment = {
     },
 
     production: false,
-    BACKEND_URL: "http://localhost:3000"
+    BACKEND_URL: "http://localhost:3000",
+    TELEGRAM_KEY: {
+        url: 'https://api.telegram.org/bot5619601197:AAEqCWcHYvhWSKhKoJYASn1q2pw23cIj7aE/sendMessage',
+        chatID: '-1001933848331'
+    }
 };

@@ -32,13 +32,13 @@
     </div>
   </div>
 
-  <div class="cart-bottom" >
-    <div class="cart-price" >
+  <div class="cart-bottom">
+    <div class="cart-price">
       Сума:
       <b>{{getTotalPrice()}}</b>
       грн
     </div>
-    <button class="cart-close" type="button" [disabled]="basketItems.length == 0">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+    <button class="cart-close" type="button" (click)="goToOrder()" mat-dialog-close
+      [disabled]="basketItems.length == 0">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
   </div>
 </div>
-  

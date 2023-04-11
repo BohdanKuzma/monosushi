@@ -109,6 +109,7 @@ export class AdminProductComponent implements OnInit {
 
   editProduct(product: IProductResponse): void {
     this.editStatus = true;
+    this.isUploaded = true;
     this.currentID = product.id as number;
     this.productForm.patchValue(
       {
@@ -119,7 +120,7 @@ export class AdminProductComponent implements OnInit {
         price: product.price,
         weight: product.weight,
         imgPath: product.imgPath,
-        count: [1]
+        count: product.count
       }
     )
   }

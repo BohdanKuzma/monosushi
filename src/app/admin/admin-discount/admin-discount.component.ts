@@ -96,6 +96,7 @@ export class AdminDiscountComponent implements OnInit {
 
   editDiscount(discount: IDiscountResponse): void {
     this.editStatus = true;
+    this.isUploaded = true;
     this.discountForm.patchValue(
       {
         title: discount.title,

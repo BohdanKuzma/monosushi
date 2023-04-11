@@ -48,7 +48,7 @@
       <tr *ngFor="let discount of adminDiscounts">
         <td>{{discount.id}}</td>
         <td>{{discount.title}}</td>
-        <td>{{discount.desc}}</td>
+        <td>{{discount.desc | slice:0:70}} <span *ngIf="discount.desc.length > 70">...</span></td>
         <td><img [src]="discount.imgPath" width="50px" alt=""></td>
         <td>
           <button class="btn btn-warning mx-1" (click)="editDiscount(discount)">Edit</button>

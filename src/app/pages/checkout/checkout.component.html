@@ -5,14 +5,116 @@
   </div>
   <div class="checkout-container">
     <div class="card-product">
-      <div class="card-product-item">
+      <div class="card-product-item" *ngFor="let item of order">
         <div class="card-item-container">
           <a class="card-product-img">
-            <img src="https://monosushi.com.ua/wp-content/uploads/2020/11/2.-filadelfiya-v-kunzhuti-122x47.jpg.pagespeed.ce.c5wW6QlZ6U.jpg" alt="">
+            <img [src]="item.imgPath" alt="">
           </a>
         </div>
-        <div class="card-item-wrapper"></div>
+        <div class="card-item-wrapper">
+          <p class="card-product-title">{{item.title}}</p>
+          <div class="card-item-wrapper-nav">
+            <div class="counter__button-group">
+              <button (click)="productCount(item, false)" class="counter__btn">-</button>
+              <input type="text" class="counter__product" [value]="item.count" readonly>
+              <button (click)="productCount(item, true)" class="counter__btn">+</button>
+            </div>
+            <p class="cart-product-price">
+              <b>{{item.price * item.count}}</b>грн
+            </p>
+            <div class="deleteproduct" (click)="removeFromBasket(item.id)">
+              X
+            </div>
+          </div>
+        </div>
       </div>
+
+      <p class="card-product-fullprice">До оплати: <b>{{totalPriceOrder}}</b>грн</p>
+
+      <div class="product-delivery-title mb-3">
+        <h3>
+          Оберіть кількість приборів
+        </h3>
+      </div>
+
+      <form [formGroup]="checkForm">
+        <div class="d-flex justify-content-between mb-3">
+          <select class="form-select" formControlName="countTools" name="countTools"
+            aria-label="Default select example">
+            <option selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+
+        </div>
+
+        <div class="product-delivery-title mb-3">
+          <h3>
+            Виберіть спосіб оплати
+          </h3>
+        </div>
+
+        <div class="row d-flex mb-3">
+          <label for="r1" class="form-label mb-2"><input type="radio" formControlName="payment" name="payment" id="r1"
+              value="Готівка"><span>Готівка</span></label>
+          <label for="r2" class="form-label mb-2"><input type="radio" formControlName="payment" name="payment" id="r2"
+              value="Термінал"><span>Термінал</span></label>
+        </div>
+
+
+        <div class="product-delivery-title">
+          <h3>
+            Вкажіть будь ласка ваші дані
+          </h3>
+        </div>
+
+        <div class="row d-flex">
+          <div class="mb-3 col-6">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" pattern="^[^0-9]*$" formControlName="firstname" name="firstname"
+              placeholder="Ваше Ім'я*">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" pattern="^\+380\d{9}$" formControlName="phone" name="phone"
+              placeholder="Телефон*">
+          </div>
+        </div>
+
+        <div class="row d-flex">
+
+          <div class="mb-3 col-6">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" formControlName="street" name="street" placeholder="Вулиця*">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="exampleInputEmail1" class="form-label"></label>
+            <input type="text" class="form-control" formControlName="house" name="house" placeholder="Номер будинку">
+          </div>
+
+        </div>
+
+        <div class="product-delivery-title mb-3">
+          <h3>
+            Коментар
+          </h3>
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control textA" id="floatingTextarea2" formControlName="message"
+            name="message"></textarea>
+          <label for="floatingTextarea2"></label>
+        </div>
+
+        <button type="submit" class="btn-order" (click)="createOrder()" [disabled]="checkForm.invalid || order.length == 0">Оформити
+          замовлення</button>
+      </form>
+
     </div>
+
   </div>
+
+
 </section>

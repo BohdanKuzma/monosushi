@@ -117,6 +117,7 @@ export class AdminCategoryComponent implements OnInit {
 
   editCategory(category: ICategoryResponse): void {
     this.editStatus = true;
+    this.isUploaded = true;
     this.categoryForm.patchValue(
       {
         title: category.title,

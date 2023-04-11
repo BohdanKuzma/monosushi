@@ -47,7 +47,6 @@
     <ng-container *ngIf="isUploaded">
       <div class=" d-flex justify-content-center">
         <img [src]="valueByControl('imgPath')" width="300px" alt="">
-
       </div>
       <button type="button" class="btn btn-danger w-100" (click)="deleteImage()">Delete</button>
     </ng-container>
@@ -71,7 +70,8 @@
       <tr *ngFor="let product of adminProducts">
         <td>{{product.id}}</td>
         <td>{{product.title}}</td>
-        <td>{{product.desc}}</td>
+        <td>{{product.desc}}
+        </td>
         <td><img [src]="product.imgPath" width="50px" alt=""></td>
         <td>
           <button class="btn btn-warning mx-1" (click)="editProduct(product)">Edit</button>
