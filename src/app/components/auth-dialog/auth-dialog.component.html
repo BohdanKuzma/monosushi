@@ -33,20 +33,21 @@
     <div class="row">
       <div class="mb-2 col-6">
         <label for="exampleInputEmail1" class="form-label"></label>
-        <input type="text" class="form-control w-100" placeholder="Ваше ім'я" formControlName="firstName"
-          name="firstname">
+        <input type="text" class="form-control w-100" placeholder="Ваше ім'я" pattern="^[^0-9]*$"
+          formControlName="firstName" name="firstname">
       </div>
 
       <div class="mb-2 col-6">
         <label for="exampleInputEmail1" class="form-label"></label>
-        <input type="text" class="form-control w-100" placeholder="Ваше прізвище" formControlName="lastName"
-          name="lastName">
+        <input type="text" class="form-control w-100" placeholder="Ваше прізвище" pattern="^[^0-9]*$"
+          formControlName="lastName" name="lastName">
       </div>
     </div>
 
     <div class="mb-2 w-100">
       <label for="exampleInputEmail1" class="form-label"></label>
-      <input type="text" class="form-control w-100" placeholder="Ваш телефон" formControlName="phone" name="phone">
+      <input type="text" class="form-control w-100" placeholder="Ваш телефон" pattern="^\+380\d{9}$"
+        formControlName="phone" name="phone">
     </div>
 
     <div class="mb-2 w-100">
@@ -76,13 +77,13 @@
       <span class="rules-text">Я погоджуюсь <a href="/oferta">Правилами користування</a></span>
     </div> -->
 
-    <button mat-dialog-close type="button" class="btn-cabinet btn-address-add"
-      (click)="registerUser()">Зареєструватися</button>
+    <button mat-dialog-close type="button" class="btn-cabinet btn-address-add" (click)="registerUser()"
+      [disabled]="regForm.invalid">Зареєструватися</button>
   </form>
 
   <div class="btn-modal-wrapper">
     <p>Уже зареєстровані?</p>
-    <div class="modal-forgot-pass-btn" (click)="changeRegisterUser()">Увійти в аккаунт</div>
+    <div class="modal-forgot-pass-btn" (click)="changeRegisterUser() ">Увійти в аккаунт</div>
   </div>
 
 </div>

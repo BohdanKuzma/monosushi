@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { OrdersServiceService } from 'src/app/shared/services/orders/orders-service.service';
 import { environment } from 'src/environments/environmet';
@@ -23,7 +24,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private orderService: OrdersServiceService,
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -35,16 +37,33 @@ export class CheckoutComponent implements OnInit {
 
 
   initCheckForm(): void {
-    this.checkForm = this.fb.group({
-      firstname: [null, [Validators.required]],
-      phone: [null, [Validators.required]],
-      street: [null, [Validators.required]],
-      house: [null, [Validators.required]],
-      message: [null],
-      countTools: [null, [Validators.required]],
-      payment: [null, [Validators.required]],
+    if (localStorage.getItem('currentUser') && localStorage.length > 0) {
+      const user = JSON.parse(localStorage.getItem('currentUser') as string)
 
-    })
+
+      this.checkForm = this.fb.group({
+        firstname: [user.firstName, [Validators.required]],
+        phone: [user.phoneNumber, [Validators.required]],
+        street: [null, [Validators.required]],
+        house: [null, [Validators.required]],
+        message: [null],
+        countTools: [null, [Validators.required]],
+        payment: [null, [Validators.required]],
+
+      })
+    } else {
+      this.checkForm = this.fb.group({
+        firstname: [null, [Validators.required]],
+        phone: [null, [Validators.required]],
+        street: [null, [Validators.required]],
+        house: [null, [Validators.required]],
+        message: [null],
+        countTools: [null, [Validators.required]],
+        payment: [null, [Validators.required]],
+
+      })
+    }
+
   }
 
 
@@ -110,32 +129,33 @@ export class CheckoutComponent implements OnInit {
     let basket = '';
     for (const item of this.order) {
       basket += `Назва продукту: ${item.title},
-      Кількість продукту: ${item.count}
-      ------------------ 
-      `
-      
+      Кількість продукту: ${item.count}`
+
     }
 
     const text = `
-    
-    ===
+    Веб-додаток Monosushi
+    ---
     Ім'я: ${this.checkForm.value.firstname};
-    ===
+    ---
     Телефон: ${this.checkForm.value.phone};
-    ===
+    ---
     Повідомлення: ${this.checkForm.value.message};
-    ===
+    ---
     ${basket}
-    ===
+    
     Загальна ціна: ${this.totalPriceOrder}
     `;
-    
 
     const params = { chat_id: this.chatID, text };
 
     this.http.post(this.tgURL, params).subscribe(
       () => {
         this.checkForm.reset();
+        localStorage.setItem('basket', '[]')
+        this.updateBasket()
+        this.orderService.changeBasket.next(true)
+        this.router.navigate([''])
         // this.toastr.success('Ваше повідомлення відправлено, очікуйте фідбек!')
       },
       (error) => {

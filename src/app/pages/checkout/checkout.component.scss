@@ -158,6 +158,12 @@
     border-radius: 10px;
     padding: 5px;
     transition: all .4s;
+
+    @media (min-width:992px) {
+      &:hover {
+        background-color: #b5d8f7;
+      }
+    }
   }
 
   // .counter__product
@@ -201,12 +207,11 @@
   transition: all .4s;
 
   &:disabled {
-    background-color: grey;
-    border: 2px solid grey;
+    background-color: transparent;
 
-    &:hover {
-      background: grey;
-    }
+    // &:hover {
+    //   background: grey;
+    // }
   }
 
 

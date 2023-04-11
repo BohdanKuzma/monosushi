@@ -41,6 +41,10 @@
   color: #252525;
   border: 2px solid #b5d8f7;
   background: #b5d8f7;
+
+  &:disabled {
+    background-color: transparent;
+  }
 }
 
 
@@ -73,7 +77,7 @@
   color: #252525;
 }
 
-.password-error{
+.password-error {
   display: flex;
   justify-content: center;
   align-items: center;

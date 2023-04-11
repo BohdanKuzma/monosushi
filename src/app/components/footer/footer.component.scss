@@ -43,6 +43,10 @@
     color: #212529;
     font-weight: 700;
 
+    @media (max-width: 420px) {
+      width: 49px;
+    }
+
     span {
       margin-top: 4px;
     }
@@ -264,6 +268,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     @media (min-width:992px) {
       &:hover {
@@ -313,6 +318,7 @@
 
     .footer__social {
       margin-top: 15px;
+
     }
 
 

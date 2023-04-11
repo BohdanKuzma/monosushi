@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
 
   getTotalCount(): void {
     this.totalCount = this.basket.reduce((totalCount: number, prod: IProductResponse) =>
-    totalCount + prod.count, 0)
+      totalCount + prod.count, 0)
   }
 
   updateBasket(): void {
