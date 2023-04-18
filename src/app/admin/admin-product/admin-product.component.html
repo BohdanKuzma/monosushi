@@ -1,7 +1,8 @@
 <div class="container col-12 ">
   <form [formGroup]="productForm" (submit)="addProduct()">
-
+   
     <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Category</label>
       <select class="form-select" aria-label="Default select example" formControlName="category" name="category">
         <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.title}}</option>
       </select>

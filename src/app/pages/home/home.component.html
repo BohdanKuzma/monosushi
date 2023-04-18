@@ -140,7 +140,7 @@
 
             <div class="counter__button-group">
               <button type="button" (click)="productCount(product, false)" class="counter__btn">-</button>
-              <input type="text" class="counter__product" [value]="product.count">
+              <input type="text" class="counter__product" [value]="product.count" readonly>
               <button type="button" (click)="productCount(product, true)" class="counter__btn">+</button>
             </div>
             <button class="btn__order" (click)="addToBasket(product)">Замовити</button>
