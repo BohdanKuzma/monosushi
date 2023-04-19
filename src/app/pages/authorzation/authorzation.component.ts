@@ -13,7 +13,9 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './authorzation.component.html',
   styleUrls: ['./authorzation.component.scss']
 })
-export class AuthorzationComponent implements OnInit, OnDestroy {
+
+//OnDestroy
+export class AuthorzationComponent implements OnInit {
   public authForm!: FormGroup;
   public loginSubscription!: Subscription;
 
@@ -30,9 +32,9 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     this.initAuthForm();
   }
 
-  ngOnDestroy(): void {
-    this.loginSubscription.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   // this.loginSubscription.unsubscribe();
+  // }
 
   initAuthForm(): void {
     this.authForm = this.fb.group({
@@ -65,7 +67,7 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     }, (e) => {
       console.log('error', e);
     })
-    
+
   }
 
   registerUser(): void {
